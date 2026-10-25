@@ -33,8 +33,20 @@ def main():
         ],
     )
 
-    # Placeholder: each page will delegate to a function in src/ui/*.
-    st.info(f"🚧 **{page}** page — coming soon in later build steps.")
+    if page == "Dataset & Validation":
+        from src.ui.input_form import render_dataset_page
+        render_dataset_page()
+    elif page == "Generate Timetable":
+        from src.ui.algorithm_selector import render_generator_page
+        render_generator_page()
+    elif page == "View Timetable":
+        from src.ui.timetable_views import render_timetable_views_page
+        render_timetable_views_page()
+    elif page == "Manual Editor":
+        from src.ui.manual_editor import render_editor_page
+        render_editor_page()
+    else:
+        st.info(f"🚧 **{page}** page — coming soon in later build steps.")
 
 
 if __name__ == "__main__":

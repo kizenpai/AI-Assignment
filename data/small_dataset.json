@@ -1,0 +1,314 @@
+{
+  "dataset_id": "small_v1",
+  "description": "Small feasible demonstration dataset (3 classes, 6 teachers, 4 rooms, 5 days, 6 periods/day)",
+  "days": 5,
+  "periods_per_day": 6,
+  "lunch_period": 4,
+  "classes": [
+    {
+      "class_id": "C1",
+      "name": "Grade 10 - Section A",
+      "size": 30,
+      "calendar_id": "default"
+    },
+    {
+      "class_id": "C2",
+      "name": "Grade 10 - Section B",
+      "size": 28,
+      "calendar_id": "default"
+    },
+    {
+      "class_id": "C3",
+      "name": "Grade 10 - Section C",
+      "size": 32,
+      "calendar_id": "default"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": "MATH",
+      "name": "Mathematics",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    },
+    {
+      "subject_id": "ENG",
+      "name": "English Literature",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    },
+    {
+      "subject_id": "PHY",
+      "name": "Physics",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    },
+    {
+      "subject_id": "CHEM",
+      "name": "Chemistry",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    },
+    {
+      "subject_id": "BIO",
+      "name": "Biology",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    },
+    {
+      "subject_id": "CS_LAB",
+      "name": "Computer Science Practical",
+      "requires_room_type": "computer_lab",
+      "is_lab": true
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "R101",
+      "capacity": 40,
+      "room_type": "lecture",
+      "unavailable_slots": []
+    },
+    {
+      "room_id": "R102",
+      "capacity": 35,
+      "room_type": "lecture",
+      "unavailable_slots": []
+    },
+    {
+      "room_id": "R103",
+      "capacity": 35,
+      "room_type": "lecture",
+      "unavailable_slots": []
+    },
+    {
+      "room_id": "LAB1",
+      "capacity": 35,
+      "room_type": "computer_lab",
+      "unavailable_slots": [
+        { "day": 4, "period": 6 }
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "teacher_id": "T1",
+      "name": "Dr. A. Rao",
+      "subjects_qualified": ["MATH"],
+      "unavailable_slots": [
+        { "day": 0, "period": 1 }
+      ],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 15,
+      "preferred_slots": [
+        { "day": 1, "period": 2 },
+        { "day": 2, "period": 2 }
+      ],
+      "undesired_slots": [
+        { "day": 4, "period": 6 }
+      ]
+    },
+    {
+      "teacher_id": "T2",
+      "name": "Prof. S. Smith",
+      "subjects_qualified": ["PHY"],
+      "unavailable_slots": [],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 15,
+      "preferred_slots": [
+        { "day": 0, "period": 2 }
+      ],
+      "undesired_slots": []
+    },
+    {
+      "teacher_id": "T3",
+      "name": "Dr. P. Patel",
+      "subjects_qualified": ["CHEM"],
+      "unavailable_slots": [
+        { "day": 2, "period": 1 }
+      ],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 15,
+      "preferred_slots": [],
+      "undesired_slots": []
+    },
+    {
+      "teacher_id": "T4",
+      "name": "Ms. M. Davis",
+      "subjects_qualified": ["BIO"],
+      "unavailable_slots": [],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 15,
+      "preferred_slots": [],
+      "undesired_slots": []
+    },
+    {
+      "teacher_id": "T5",
+      "name": "Mr. J. Wilson",
+      "subjects_qualified": ["ENG"],
+      "unavailable_slots": [
+        { "day": 4, "period": 5 }
+      ],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 15,
+      "preferred_slots": [],
+      "undesired_slots": []
+    },
+    {
+      "teacher_id": "T6",
+      "name": "Dr. K. Lee",
+      "subjects_qualified": ["CS_LAB"],
+      "unavailable_slots": [],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 15,
+      "preferred_slots": [],
+      "undesired_slots": []
+    }
+  ],
+  "requirements": [
+    {
+      "class_id": "C1",
+      "subject_id": "MATH",
+      "teacher_id": "T1",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C1",
+      "subject_id": "ENG",
+      "teacher_id": "T5",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C1",
+      "subject_id": "PHY",
+      "teacher_id": "T2",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C1",
+      "subject_id": "CHEM",
+      "teacher_id": "T3",
+      "weekly_periods": 2,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C1",
+      "subject_id": "BIO",
+      "teacher_id": "T4",
+      "weekly_periods": 2,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C1",
+      "subject_id": "CS_LAB",
+      "teacher_id": "T6",
+      "weekly_periods": 2,
+      "duration_periods": 2,
+      "consecutive_required": true
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "MATH",
+      "teacher_id": "T1",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "ENG",
+      "teacher_id": "T5",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "PHY",
+      "teacher_id": "T2",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "CHEM",
+      "teacher_id": "T3",
+      "weekly_periods": 2,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "BIO",
+      "teacher_id": "T4",
+      "weekly_periods": 2,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "CS_LAB",
+      "teacher_id": "T6",
+      "weekly_periods": 2,
+      "duration_periods": 2,
+      "consecutive_required": true
+    },
+    {
+      "class_id": "C3",
+      "subject_id": "MATH",
+      "teacher_id": "T1",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C3",
+      "subject_id": "ENG",
+      "teacher_id": "T5",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C3",
+      "subject_id": "PHY",
+      "teacher_id": "T2",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C3",
+      "subject_id": "CHEM",
+      "teacher_id": "T3",
+      "weekly_periods": 2,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C3",
+      "subject_id": "BIO",
+      "teacher_id": "T4",
+      "weekly_periods": 2,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C3",
+      "subject_id": "CS_LAB",
+      "teacher_id": "T6",
+      "weekly_periods": 2,
+      "duration_periods": 2,
+      "consecutive_required": true
+    }
+  ]
+}

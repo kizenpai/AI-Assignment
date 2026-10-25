@@ -1,0 +1,81 @@
+{
+  "dataset_id": "template_dataset_v1",
+  "description": "Template dataset configuration for the AI Timetable Scheduler. Copy and modify this file.",
+  "days": 5,
+  "periods_per_day": 6,
+  "lunch_period": 4,
+  "classes": [
+    {
+      "class_id": "C1",
+      "name": "Class 10-A",
+      "size": 30,
+      "calendar_id": "default"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": "MATH",
+      "name": "Mathematics",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    },
+    {
+      "subject_id": "CS_LAB",
+      "name": "Computer Lab Practical",
+      "requires_room_type": "computer_lab",
+      "is_lab": true
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "R101",
+      "capacity": 35,
+      "room_type": "lecture",
+      "unavailable_slots": []
+    },
+    {
+      "room_id": "LAB1",
+      "capacity": 35,
+      "room_type": "computer_lab",
+      "unavailable_slots": [
+        { "day": 4, "period": 6 }
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "teacher_id": "T1",
+      "name": "Dr. A. Teacher",
+      "subjects_qualified": ["MATH", "CS_LAB"],
+      "unavailable_slots": [
+        { "day": 0, "period": 1 }
+      ],
+      "max_daily_periods": 4,
+      "max_weekly_periods": 16,
+      "preferred_slots": [
+        { "day": 1, "period": 2 }
+      ],
+      "undesired_slots": [
+        { "day": 4, "period": 6 }
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "class_id": "C1",
+      "subject_id": "MATH",
+      "teacher_id": "T1",
+      "weekly_periods": 3,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C1",
+      "subject_id": "CS_LAB",
+      "teacher_id": "T1",
+      "weekly_periods": 2,
+      "duration_periods": 2,
+      "consecutive_required": true
+    }
+  ]
+}

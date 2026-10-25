@@ -1,0 +1,103 @@
+{
+  "dataset_id": "infeasible_sample_v1",
+  "description": "Deliberately infeasible dataset: 2 classes require teacher T1, but T1 is only available in exactly 1 weekly time slot (Day 0, Period 1). Structurally valid, but mathematically impossible to satisfy HC-001 and HC-006.",
+  "days": 5,
+  "periods_per_day": 6,
+  "lunch_period": 4,
+  "classes": [
+    {
+      "class_id": "C1",
+      "name": "Class 1",
+      "size": 30,
+      "calendar_id": "default"
+    },
+    {
+      "class_id": "C2",
+      "name": "Class 2",
+      "size": 30,
+      "calendar_id": "default"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": "MATH",
+      "name": "Mathematics",
+      "requires_room_type": "lecture",
+      "is_lab": false
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "R101",
+      "capacity": 40,
+      "room_type": "lecture",
+      "unavailable_slots": []
+    },
+    {
+      "room_id": "R102",
+      "capacity": 40,
+      "room_type": "lecture",
+      "unavailable_slots": []
+    }
+  ],
+  "teachers": [
+    {
+      "teacher_id": "T1",
+      "name": "Dr. Constrained",
+      "subjects_qualified": ["MATH"],
+      "unavailable_slots": [
+        { "day": 0, "period": 2 },
+        { "day": 0, "period": 3 },
+        { "day": 0, "period": 4 },
+        { "day": 0, "period": 5 },
+        { "day": 0, "period": 6 },
+        { "day": 1, "period": 1 },
+        { "day": 1, "period": 2 },
+        { "day": 1, "period": 3 },
+        { "day": 1, "period": 4 },
+        { "day": 1, "period": 5 },
+        { "day": 1, "period": 6 },
+        { "day": 2, "period": 1 },
+        { "day": 2, "period": 2 },
+        { "day": 2, "period": 3 },
+        { "day": 2, "period": 4 },
+        { "day": 2, "period": 5 },
+        { "day": 2, "period": 6 },
+        { "day": 3, "period": 1 },
+        { "day": 3, "period": 2 },
+        { "day": 3, "period": 3 },
+        { "day": 3, "period": 4 },
+        { "day": 3, "period": 5 },
+        { "day": 3, "period": 6 },
+        { "day": 4, "period": 1 },
+        { "day": 4, "period": 2 },
+        { "day": 4, "period": 3 },
+        { "day": 4, "period": 4 },
+        { "day": 4, "period": 5 },
+        { "day": 4, "period": 6 }
+      ],
+      "max_daily_periods": 2,
+      "max_weekly_periods": 5,
+      "preferred_slots": [],
+      "undesired_slots": []
+    }
+  ],
+  "requirements": [
+    {
+      "class_id": "C1",
+      "subject_id": "MATH",
+      "teacher_id": "T1",
+      "weekly_periods": 1,
+      "duration_periods": 1,
+      "consecutive_required": false
+    },
+    {
+      "class_id": "C2",
+      "subject_id": "MATH",
+      "teacher_id": "T1",
+      "weekly_periods": 1,
+      "duration_periods": 1,
+      "consecutive_required": false
+    }
+  ]
+}
